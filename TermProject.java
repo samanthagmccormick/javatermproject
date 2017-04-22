@@ -2,6 +2,11 @@ package termproject;
 
 import java.util.Scanner;
 
+import javafx.event.ActionEvent;
+import javafx.event.Event;
+import javafx.event.EventHandler;
+import javafx.scene.control.Button;
+
 public class TermProject {
 
   public static void main(String[] args) {
@@ -10,50 +15,59 @@ public class TermProject {
 
     System.out.println("Welcome to");
     System.out.println("---------------------");
-    System.out.println("   400 Ways to Die   ");
+    System.out.println("   100 Ways to Die   ");
     System.out.println("---------------------");
     
     System.out.println("\nLet’s play!");
     
-    System.out.println("\nFirst, I need to know some things.\n");
+    System.out.println("\nFirst, I need to know some things.");
     
-    System.out.println("\nEnter your name: ");
+    System.out.print("\nEnter your name: ");
     String name = input.next();
-    System.out.println("Enter your birthdate: ");
+    System.out.print("Enter your birthdate: ");
     String birthdate = input.next();
-    System.out.println("Enter your city: ");
+    System.out.print("Enter your city: ");
     String city = input.next();
     
-    System.out.println("\nAre you single or married? (Enter 's' for single or 'm' for married: ");
+    System.out.print("\nAre you single or married? (Enter 's' for single or 'm' for married): ");
+    boolean isSingle = input.next().toLowerCase().equals("s") ? true : false;
     
-    System.out.println("\nEnter your partner's name: ");
+    System.out.print("\nEnter your partner's name: ");
     String partnerName = input.next();
-    System.out.println("Enter " + partnerName + "'s gender (Enter 'f' for female or 'm' for male: ");
+    System.out.print("Enter " + partnerName + "'s gender (Enter 'f' for female or 'm' for male): ");
     String partnerGender = input.next();
       
-    System.out.println("\nHow much time would you like to live? (Select an option):");
+    System.out.println("\nHow much time would you like to live?");
     System.out.println("[1] I don't like surprises. Let's do it NOW.");
     System.out.println("[2] 6 months would be nice");
     System.out.println("[3] I'll take a year");
     System.out.println("[4] Surprise me!");
+    System.out.print("\nEnter an option 1-4 then hit 'Enter': ");
     int timeUntilDeath = input.nextInt();
     
-    System.out.println(RandomQuestion.getRandomQuestion());
+//    // TODO move to a separate browser file after reading chapter.
+//    // Clicking ‘Generate Death’ generates a random number between 1 and 20.
+//    Button generateDeathButton = new Button("Generate My Death");
+//    generateDeathButton.setOnAction(new EventHandler<ActionEvent>() {
+//      @Override public void handle(ActionEvent e) {
+//        System.out.println((int) Math.random() * 21);
+//      }
+//    });
     
-    // BUTTON: Generate Death with event handler
-    // Clicking ‘Generate Death’ generates a random number between 1 and 20.
+    // Generate random number (button TODO)
+    int randomNumber = (int) Math.random() * 11;
+    // random activity
+    System.out.println("\n" + "Died while " + RandomActivity.getRandomActivity() + " " + RandomDeathEvent.getRandomDeathEvent(randomNumber, city, partnerName));
+    
+
+
 
     
-
-
-
     
     
     
     
     
-    
-    // Clicking ‘Generate Death’ generates a random number between 1 and 20.
     // We pick a random activity from a randomActivity[20] list using the random number (ex) getting a candy bar from a vending machine)
     // We pick    a death event from a deathEventList[20] 
     // We pair the two into a sentence (there are 20*20=400 combinations / ways to die)
