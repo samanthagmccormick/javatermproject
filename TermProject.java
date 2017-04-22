@@ -39,7 +39,7 @@ public class TermProject {
     
     System.out.print("\nEnter your partner's name: ");
     user.setPartnerName(input.next());
-    System.out.print("Enter " + partnerName + "'s gender (Enter 'f' for female or 'm' for male): ");
+    System.out.print("Enter " + user.getPartnerName() + "'s gender (Enter 'f' for female or 'm' for male): ");
     user.setPartnerGender(input.next());
       
     System.out.println("\nHow much time would you like to live?");
