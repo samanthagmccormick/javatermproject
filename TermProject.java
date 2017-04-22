@@ -22,20 +22,25 @@ public class TermProject {
     
     System.out.println("\nFirst, I need to know some things.");
     
+    // Create an empty user object
+    User user = new User();
+    
     System.out.print("\nEnter your name: ");
-    String name = input.next();
+    user.setName(input.next());
     System.out.print("Enter your birthdate: ");
-    String birthdate = input.next();
+    user.setBirthdate(input.next());
     System.out.print("Enter your city: ");
-    String city = input.next();
+    user.setCity(input.next());
     
     System.out.print("\nAre you single or married? (Enter 's' for single or 'm' for married): ");
+    // TODO move to class?
     boolean isSingle = input.next().toLowerCase().equals("s") ? true : false;
+    user.setIsSingle(isSingle);
     
     System.out.print("\nEnter your partner's name: ");
-    String partnerName = input.next();
+    user.setPartnerName(input.next());
     System.out.print("Enter " + partnerName + "'s gender (Enter 'f' for female or 'm' for male): ");
-    String partnerGender = input.next();
+    user.setPartnerGender(input.next());
       
     System.out.println("\nHow much time would you like to live?");
     System.out.println("[1] I don't like surprises. Let's do it NOW.");
@@ -43,7 +48,7 @@ public class TermProject {
     System.out.println("[3] I'll take a year");
     System.out.println("[4] Surprise me!");
     System.out.print("\nEnter an option 1-4 then hit 'Enter': ");
-    int timeUntilDeath = input.nextInt();
+    user.setTimeUntilDeath(input.nextInt());
     
 //    // TODO move to a separate browser file after reading chapter.
 //    // Clicking ‘Generate Death’ generates a random number between 1 and 20.
@@ -57,7 +62,9 @@ public class TermProject {
     // Generate random number (button TODO)
     int randomNumber = (int) Math.random() * 11;
     // random activity
-    System.out.println("\n" + "Died while " + RandomActivity.getRandomActivity() + " " + RandomDeathEvent.getRandomDeathEvent(randomNumber, city, partnerName));
+    System.out.println("\n" + "Died while " + RandomActivity.getRandomActivity() + " " + RandomDeathEvent.getRandomDeathEvent(randomNumber, user.getCity(), user.getPartnerName()));
+    
+    // get death date from User class
     
 
 
