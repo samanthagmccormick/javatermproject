@@ -10,13 +10,14 @@ public class RandomDeathEvent {
       "when a biochemical warfare agent was accidentally released into the city of [city]",
 
       // partner
-      "when [partnerName] accidentally detonated a landmine", // partner
-      "when [partnerName] mistakenly lit them on fire", // partner
+      "when [partnerName] accidentally detonated a landmine",
+      "when [partnerName] mistakenly lit them on fire",
       "when accidentally startling [partnerName] as they were picking up a WWII-era grenade",
       "when accidentally walking in on [partnerName] who was playing with machetes purchased on Ebay",
       "when [partnerName] accidentally set their campsite on fire and had broken their tent zipper earlier that night"};
 
   public static String getRandomDeathEvent(int randomNumber, String city, String partnerName) {
-    return randomDeathEventList[randomNumber].replace("[city]", city).replace("[partnerName]", partnerName);
+    return randomDeathEventList[randomNumber].replace("[city]", city).replace("[partnerName]",
+        partnerName);
   }
 }
